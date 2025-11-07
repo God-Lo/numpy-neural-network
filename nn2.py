@@ -54,7 +54,7 @@ for epoch in range(epochs):
     for iamge, label in zip(images, labels):
         loss += train(iamge,label)/len(images)
     print(f"Epoch: {epoch}; Loss: {loss}")
-print("Finished traing...")
+print("Finished training...")
 
 with np.load("C:\\Users\\ethan\\Desktop\\Python\\Machine Learning\\numpy\\mnist.npz") as f:
     images, labels = f["x_test"], f["y_test"]
@@ -75,4 +75,5 @@ while True:
             a.append(sigmoid(z[i+1]))
         print(f"Predict: {a[-1].argmax()}; Actual: {y.argmax()}; Loss: {np.square(a[-1]-y).sum()}")
     except:
+
         pass
