@@ -131,11 +131,12 @@ for epoch in range(epochs):
 print("Finished training...")
 
 with np.load("C:\\Users\\ethan\\Desktop\\Python\\Machine Learning\\numpy\\mnist.npz") as f:
-    images, labels = f["x_train"], f["y_train"]
+    images, labels = f["x_test"], f["y_test"]
 images = images.astype("float32") / 255
 images = np.reshape(images, (images.shape[0], images.shape[1] * images.shape[2]))
 labels = np.eye(10)[labels]
 
 while True:
     x = int(input("Test: "))
+
     show_nn(images[x],labels[x])
