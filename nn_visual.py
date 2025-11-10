@@ -137,6 +137,9 @@ images = np.reshape(images, (images.shape[0], images.shape[1] * images.shape[2])
 labels = np.eye(10)[labels]
 
 while True:
-    x = int(input("Test: "))
+    try:
+        x = int(input("Test: "))
+        show_nn(images[x],labels[x])
+    except:
+        pass
 
-    show_nn(images[x],labels[x])
