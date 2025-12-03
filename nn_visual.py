@@ -130,7 +130,7 @@ for epoch in range(epochs):
     print(f"Epoch: {epoch}; Loss: {loss}")
 print("Finished training...")
 
-with np.load("C:\\Users\\ethan\\Desktop\\Python\\Machine Learning\\numpy\\mnist.npz") as f:
+with np.load("mnist.npz") as f:
     images, labels = f["x_test"], f["y_test"]
 images = images.astype("float32") / 255
 images = np.reshape(images, (images.shape[0], images.shape[1] * images.shape[2]))
